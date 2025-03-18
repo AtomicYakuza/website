@@ -3,55 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivo - Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Resume - Ivo Marienfeld</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="resumeStyles.css">
+
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Ivo Marienfeld - Developer & Technical Consultant</h1>
-        <p>Building next-gen digital solutions</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I specialize in digital innovation, cloud technologies, and technical consulting. Passionate about solving complex business challenges with technology.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Guess & Go</h3>
-            <p>Designed, coded, and marketed a fully independent mobile game, available on the App Store.</p>
+    <div id="main-content"></div>
+        <div class="window">
+            <div class="window-title">
+                <span>C:\User\Ivo\resume.html</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span><a href="index.html">✖</a></span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>Quick Actions</p>
+                <nav class="nav-links">
+                    <div onclick="openAllResumeWindows()"><p>📜 Resume</p></div>
+                    <!-- <a href="resume.html">📜 Resume</a> -->
+                    <div onclick="openAllResumeWindows()"><p>🕹 Projects</p></div>
+                    <div onclick="openAllContactWindows()"><p>📞 Contact</p></div>
+                    <!-- <a href="projects.html">🕹 Projects</a>
+                    <a href="contact.html">📞 Contact</a> -->
+                </nav>
+                
+                <p class="blink">Press any key to continue...</p>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Cybersecurity research for Alexa.</p>
+        <!-- Desktop Shortcuts -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" onclick="openWindow('work-window')">
+                <img src="icons/work.png" alt="Work">
+                <p>Work Experience</p>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('education-window')">
+                <img src="icons/education.png" alt="Edu">
+                <p>Education</p>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('skills-window')">
+                <img src="icons/skills.png" alt="Skills">
+                <p>Skills</p>
+            </div>
+            <div class="desktop-icon" onclick="openWindow('contact-window')">
+                <img src="icons/contact.png" alt="Contact">
+                <p>Contact</p>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 3</h3>
-            <p>This website!</p>
+        <!-- Work Experience Window -->
+        <div class="window draggable" id="work-window">
+            <div class="window-title">
+                <span>Work Experience.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('work-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="edu-box">
+                    <p><strong>Company Name:</strong> Warehousing1</p>
+                    <p><strong>Position:</strong> Product Management Intern</p>
+                    <p><strong>Duration:</strong> 2022–2023</p>
+                    <p>
+                        • Led competitor analysis highlighting gaps in product offering which have now been successfully
+                        implemented - improving WH1’s product portfolio<br><br>
+                        • Increased data visibility to help business development team unlock greater use of data potential for
+                        multiple internal teams. (including gathering requirements, development and delivery of bespoke dashboards to team leads)<br><br>
+                        • Doubled team productivity/output through additional data processing/sorting requests
+                    </p>
+                </div>
+                <div class="edu-box">
+                    <p><strong>Company Name:</strong> Fortna</p>
+                    <p><strong>Position:</strong> Office Technician</p>
+                    <p><strong>Duration:</strong> 2017-2020</p>
+                    <p>
+                        • Alongside full-time secondary school study, successfully delivered high-quality weekly office support
+                        service through weekend cleaning, repairs, and IT support
+                    </p>
+                </div>
+                <div class="edu-box">
+                    <p><strong>Company Name:</strong> Various Summer Jobs</p>
+                    <p><strong>Positions:</strong> <br> Amazon Sortation Associate (2020)<br> Tesco Delivery Driver (2023)<br> McDonald's Crew Member (2024-2025)</p>
+                    <p><strong>Duration:</strong> 2020-2025</p>
+                    <!-- <p>Description of job role and responsibilities...</p> -->
+                </div>
+            </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Cloud Computing | AI | Web Development | Cybersecurity</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Let's Connect</h2>
-        <div class="social-links">
-            <a href="https://github.com/AtomicYakuza/">GitHub</a>
-            <a href="https://www.linkedin.com/in/ivomarienfeld/">LinkedIn</a>
-            <a href="ivo.marienfeld@gmail.com">Email</a>
+        <!-- Education Window -->
+        <div class="window draggable" id="education-window">
+            <div class="window-title">
+                <span>Education.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('education-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="edu-box">
+                    <h3> Warwick Business School</h3>
+                    <p><strong>Degree:</strong> MSc in Management of Information Systems and Digital Innovation</p>
+                    <p><strong>Expected Grade:</strong> Distinction</p>
+                    <p><strong>Graduation:</strong> 2025</p>
+                </div>
+                <hr>
+                <div class="edu-box">
+                    <h3>Aston University</h3>
+                    <p><strong>Degree:</strong> BSc (Hons) Business Computing & IT</p>
+                    <p><strong>Achieved Grade:</strong> 1st</p>
+                    <p><strong>Awards:</strong> Dean's Award (academic scholarship for highest grade in year group)</p>
+                    <p><strong>Graduation:</strong> 2024</p>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <!-- Education Window -->
+        <div class="window draggable" id="additional-window">
+            <div class="window-title">
+                <span>Leadership Roles.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('additional-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="edu-box">
+                    <h3> Social Lead, Aston Computer Science Society</h3>
+                    <p>Combined passions of films and computing through support of society’s movie social sessions,
+                        selecting relevant topical films, organising room allocation, and setting up events. Contributed to
+                        the club's growth by driving additional engagements including Career Talks and 48-hour coding
+                        challenges a.k.a. Hackathons.</p>
+                </div>
+                <hr>
+                <div class="edu-box">
+                    <h3>Duke of Edinburgh Award (Gold, Silver, and Bronze)</h3>
+                    <p>Top 2% of DofE participants. 300+ hours developing transferable communication, commitment,
+                        resilience, team building, and leadership skills through volunteering and sporting engagements.
+                        Responsibilities included maintaining a charity’s website (CMS), leadership role at local scout
+                        group, and multiple expeditions.</p>
+                </div>
+                <div class="edu-box">
+                    <h3>Explorer / Young Leader, Aspley Guise Scout Group</h3>
+                    <p>Selected to represent the UK at the World Scout Jamboree in the USA – fundraised £4,000.
+                        Planned and delivered activities for Beaver Scout (aged 5-7) on a weekly basis for 4 years.</p>
+                </div>
+                <div class="edu-box">
+                    <h3>Various Leadership Roles, Sixth Form</h3>
+                    <p>Roles included Deputy Head of House, IT Club Head, and Student Council.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Window -->
+        <div class="window draggable" id="skills-window">
+            <div class="window-title">
+                <span>Skills.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('skills-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <strong><p>Non-technical Skills</p></strong>
+                <ul>
+                    <li>Photography</li>
+                    <li>Cooking</li>
+                    <li>Team Player</li>
+                </ul>
+                <strong><p>Technical Skills</p></strong>
+                <ul>
+                    <li>VB.net</li>
+                    <li>SQL</li>
+                    <li>Swift & SwiftUI</li>
+                    <li>Python</li>
+                    <li>Node.js</li>
+                    <li>Typescript</li>
+                    <li>html, css & js</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div class="window draggable" id="contact-window">
+            <div class="window-title">
+                <span>Contact.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('contact-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p><strong>Email:</strong> ivo.marienfeld@gmail.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/ivomarienfeld</p>
+                <p><strong>GitHub:</strong> github.com/atomicyakuza</p>
+            </div>
+        </div>
+        <!-- Guess & Go Windpw -->
+        <div class="window draggable" id="guess-window">
+            <div class="window-title">
+                <span>Guess&Go.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('contact-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <h3>🎮 Guess & Go</h3>
+                <p><strong>Description:</strong> A fun multiplayer party game app that lets users play together guessing</p>
+                
+                <p><strong>Technologies Used:</strong></p>
+                <ul>
+                    <li>SwiftUI</li>
+                    <li>Affinity Designer</li>
+                    <li>Google AdMob</li>
+                </ul>
+        
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Multiplayer gameplay with real-time updates</li>
+                    <li>Customizable game modes</li>
+                    <li>Leaderboard tracking</li>
+                </ul>
+        
+                <p><strong>🔗 Links:</strong></p>
+                <a href="https://github.com/yourusername/project-repo" target="_blank">🔗 GitHub Repo</a>
+                <br>
+                <a href="https://yourprojectdemo.com" target="_blank">🚀 App Store</a>
+            </div>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">Start</div>
+        <div class="clock"></div>
+    </div>
+    <div class="start-menu hidden">
+        <ul>
+            <li>📁 My Computer</li>
+            <li>📄 Documents</li>
+            <li>🔧 Settings</li>
+            <li>🔄 Restart</li>
+            <li>⏻ Shut Down</li>
+        </ul>
+    </div>
+
+    <script src="resumeScript.js"></script>
+    <script src="Script.js"></script>
 </body>
 </html>
-
