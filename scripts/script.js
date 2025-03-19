@@ -1,20 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const startButton = document.querySelector(".start-button");
-    const startMenu = document.querySelector(".start-menu");
+    const startMenu = document.getElementById("start-menu");
+    const startButton = document.getElementById("start-button");
 
-    if (startButton && startMenu) {
+    if (startMenu && startButton) {
         startButton.addEventListener("click", function (event) {
             event.stopPropagation();
-            startMenu.classList.toggle("hidden");
+            startMenu.style.display = (startMenu.style.display === "block") ? "none" : "block";
         });
 
         document.addEventListener("click", function (event) {
-            if (!startButton.contains(event.target) && !startMenu.contains(event.target)) {
-                startMenu.classList.add("hidden");
+            if (!startMenu.contains(event.target) && event.target !== startButton) {
+                startMenu.style.display = "none";
             }
         });
+    } else {
+        console.error("Start button or Start menu not found!");
     }
 });
+
 
 function updateClock() {
     const clockElement = document.querySelector(".clock");

@@ -1,55 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Ivo Marienfeld</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/consoleStyles.css">
+    <link rel="icon" type="image/png" href="icons/favicon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IvOS"/>
+    <meta property="og:description" content="Personal Website." />
+    <meta property="og:image" content="https://ivodev.co.uk/icons/preview.png" />
+    <meta property="og:url" content="https://ivodev.co.uk" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IvOS" />
+    <meta name="twitter:description" content="Personal Website." />
+    <meta name="twitter:image" content="https://ivodev.co.uk/icons/preview.png" />
+    
 </head>
 <body>
     <div id="main-content"></div>
-        <div class="window">
+        <!-- Desktop Shortcuts -->
+        <div class="desktop-icons">
+            <div class="icon-group group-top-left">
+                <div class="desktop-icon" onclick="openWindow('work-window')">
+                    <img src="icons/computer.png" alt="Work">
+                    <p>Work Experience.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('education-window')">
+                    <img src="icons/education.png" alt="Edu">
+                    <p>Education.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('skills-window')">
+                    <img src="icons/skills.png" alt="Skills">
+                    <p>Skills.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('additional-window')">
+                    <img src="icons/additional.png" alt="Contact">
+                    <p>Leadership Roles.exe</p>
+                </div>
+            </div>
+            <div class="icon-group group-bottom-left">
+                <div class="desktop-icon" onclick="openWindow('contact-window')">
+                    <img src="icons/contact.png" alt="cont">
+                    <p>Contact.exe</p>
+                </div>
+            </div>
+            <div class="icon-group group-top-right">
+                <div class="desktop-icon" onclick="openWindow('quick-window')">
+                    <img src="icons/quick.png" alt="QA">
+                    <p>Quick Actions.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('console-window')">
+                    <img src="icons/terminal.png" alt="term">
+                    <p>Terminal.exe</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="window draggable" id="quick-window">
             <div class="window-title">
-                <span>C:\User\Ivo\resume.html</span>
+                <span>Quick Actions.exe</span>
                 <div class="window-buttons">
-                    <span>❐</span> <span>❏</span> <span><a href="index.html">✖</a></span>
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('quick-window')">✖</span>
                 </div>
             </div>
             <div class="window-content">
-                <p>Quick Actions</p>
                 <nav class="nav-links">
                     <div onclick="openAllResumeWindows()"><p>📜 Resume</p></div>
-                    <!-- <a href="resume.html">📜 Resume</a> -->
-                    <div onclick="openAllResumeWindows()"><p>🕹 Projects</p></div>
+                    <div onclick="openAllProjectWindows()"><p>🕹 Projects</p></div>
                     <div onclick="openAllContactWindows()"><p>📞 Contact</p></div>
-                    <!-- <a href="projects.html">🕹 Projects</a>
-                    <a href="contact.html">📞 Contact</a> -->
                 </nav>
-                
-                <p class="blink">Press any key to continue...</p>
             </div>
         </div>
-        <!-- Desktop Shortcuts -->
-        <div class="desktop-icons">
-            <div class="desktop-icon" onclick="openWindow('work-window')">
-                <img src="icons/work.png" alt="Work">
-                <p>Work Experience</p>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('education-window')">
-                <img src="icons/education.png" alt="Edu">
-                <p>Education</p>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('skills-window')">
-                <img src="icons/skills.png" alt="Skills">
-                <p>Skills</p>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('contact-window')">
-                <img src="icons/contact.png" alt="Contact">
-                <p>Contact</p>
-            </div>
-        </div>
+
         <!-- Work Experience Window -->
-        <div class="window draggable" id="work-window">
+        <div class="window draggable hidden" id="work-window">
             <div class="window-title">
                 <span>Work Experience.exe</span>
                 <div class="window-buttons">
@@ -88,7 +118,7 @@
         </div>
 
         <!-- Education Window -->
-        <div class="window draggable" id="education-window">
+        <div class="window draggable hidden" id="education-window">
             <div class="window-title">
                 <span>Education.exe</span>
                 <div class="window-buttons">
@@ -114,7 +144,7 @@
         </div>
 
         <!-- Education Window -->
-        <div class="window draggable" id="additional-window">
+        <div class="window draggable hidden" id="additional-window">
             <div class="window-title">
                 <span>Leadership Roles.exe</span>
                 <div class="window-buttons">
@@ -129,7 +159,7 @@
                         the club's growth by driving additional engagements including Career Talks and 48-hour coding
                         challenges a.k.a. Hackathons.</p>
                 </div>
-                <hr>
+                <!-- <hr> -->
                 <div class="edu-box">
                     <h3>Duke of Edinburgh Award (Gold, Silver, and Bronze)</h3>
                     <p>Top 2% of DofE participants. 300+ hours developing transferable communication, commitment,
@@ -150,7 +180,7 @@
         </div>
 
         <!-- Skills Window -->
-        <div class="window draggable" id="skills-window">
+        <div class="window draggable hidden" id="skills-window">
             <div class="window-title">
                 <span>Skills.exe</span>
                 <div class="window-buttons">
@@ -178,7 +208,7 @@
         </div>
 
         <!-- Contact Window -->
-        <div class="window draggable" id="contact-window">
+        <div class="window draggable hidden" id="contact-window">
             <div class="window-title">
                 <span>Contact.exe</span>
                 <div class="window-buttons">
@@ -186,17 +216,17 @@
                 </div>
             </div>
             <div class="window-content">
-                <p><strong>Email:</strong> ivo.marienfeld@gmail.com</p>
-                <p><strong>LinkedIn:</strong> linkedin.com/in/ivomarienfeld</p>
-                <p><strong>GitHub:</strong> github.com/atomicyakuza</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@ivodev.co.uk">contact@ivodev.co.uk</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ivomarienfeld">linkedin.com/in/ivomarienfeld</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/atomicyakuza">github.com/atomicyakuza</a></p>
             </div>
         </div>
         <!-- Guess & Go Windpw -->
-        <div class="window draggable" id="guess-window">
+        <div class="window draggable hidden" id="guess-window">
             <div class="window-title">
                 <span>Guess&Go.exe</span>
                 <div class="window-buttons">
-                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('contact-window')">✖</span>
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('guess-window')">✖</span>
                 </div>
             </div>
             <div class="window-content">
@@ -223,12 +253,32 @@
                 <a href="https://yourprojectdemo.com" target="_blank">🚀 App Store</a>
             </div>
         </div>
+        <!-- Console Window -->
+        <div class="window draggable" id="console-window">
+            <div class="window-title">
+                <span>Console.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('console-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="console-output" id="console-output">
+                    <p>Welcome to Console.exe</p>
+                    <p>Type 'help' to see available commands.</p>
+                </div>
+                <div class="console-input">
+                    <span>C:\User\Ivo&gt;</span>
+                    <input type="text" id="console-input" autofocus onkeydown="handleCommand(event)">
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="taskbar">
-        <div class="start-button" onclick="toggleStartMenu()">Start</div>
+        <div class="start-button" id="start-button" onclick="toggleStartMenu()">Start</div>
         <div class="clock"></div>
     </div>
-    <div class="start-menu hidden">
+    <div id="start-menu" class="start-menu">
         <ul>
             <li>📁 My Computer</li>
             <li>📄 Documents</li>
@@ -238,7 +288,8 @@
         </ul>
     </div>
 
-    <script src="resumeScript.js"></script>
-    <script src="Script.js"></script>
+    <script src="scripts/consoleScript.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/resumeScript.js"></script>
 </body>
 </html>

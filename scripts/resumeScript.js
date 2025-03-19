@@ -1,18 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    makeDraggable("work-window");
-    makeDraggable("education-window");
-    makeDraggable("skills-window");
-    makeDraggable("contact-window");
-    makeDraggable("additional-window")
-    makeDraggable("guess-window")
+    const windows = ["work-window", "education-window", "skills-window", "contact-window", "additional-window", "guess-window", "console-window"];
+
+    // Hide all windows except "Quick Actions"
+    windows.forEach(windowId => {
+        const windowElement = document.getElementById(windowId);
+        if (windowElement) {
+            windowElement.classList.add("hidden");
+        }
+    });
+
+    // Make all windows draggable
+    windows.concat(["quick-window"]).forEach(makeDraggable);
 });
 
+var highestZIndex = 10; // Keeps track of the highest z-index
 
 function makeDraggable(windowId) {
     const windowElement = document.getElementById(windowId);
+    if (!windowElement) return;
+
     let offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
-    
     const titleBar = windowElement.querySelector(".window-title");
+    if (!titleBar) return;
+
     titleBar.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
@@ -39,15 +49,15 @@ function makeDraggable(windowId) {
     }
 }
 
-// Function to close a window when clicking "X"
-function closeWindow(windowId) {
-    document.getElementById(windowId).style.display = "none";
-}
-
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     if (windowElement) {
         windowElement.classList.remove("hidden");
+        windowElement.style.display = "block";
+        highestZIndex++;
+        windowElement.style.zIndex = highestZIndex;
+    } else {
+        console.error(`Window with id '${windowId}' not found.`);
     }
 }
 
@@ -59,35 +69,25 @@ function closeWindow(windowId) {
 }
 
 function openAllResumeWindows() {
-    const windows = ["work-window", "education-window", "skills-window", "additional-window"];
-
-    windows.forEach(windowId => {
-        const windowElement = document.getElementById(windowId);
-        if (windowElement) {
-            windowElement.classList.remove("hidden");
-        }
-    });
+    ["work-window", "education-window", "skills-window", "additional-window"].forEach(openWindow);
 }
 
 function openAllContactWindows() {
-    const windows = ["contact-window"];
+    openWindow("contact-window");
+}
 
-    windows.forEach(windowId => {
-        const windowElement = document.getElementById(windowId);
-        if (windowElement) {
-            windowElement.classList.remove("hidden");
-        }
-    });
+function openAllProjectWindows() {
+    openWindow("guess-window");
 }
 
 
-// function updateClock() {
-//     const clockElement = document.querySelector(".clock");
-//     if (clockElement) {
-//         const now = new Date();
-//         const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-//         clockElement.textContent = timeString;
-//     }
-// }
-// setInterval(updateClock, 1000);
-// updateClock();
+document.addEventListener("DOMContentLoaded", function () {
+    
+
+    document.querySelectorAll(".window").forEach(win => {
+        win.addEventListener("mousedown", function () {
+            highestZIndex++;
+            this.style.zIndex = highestZIndex; // Set the clicked window to the highest z-index
+        });
+    });
+});
