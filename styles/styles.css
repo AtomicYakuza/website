@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 4px;
     cursor: grab; /* Draggable Windows 95 style */
 }
 
@@ -251,10 +251,12 @@ body {
 /* Positioning Windows */
 #work-window { top: 10%; left: 10%; }
 #education-window { top: 50px; right: 20%; }
-#skills-window { bottom: 50px; left: 30%; }
+#skills-window { bottom: 50%; left: 30%; }
 #contact-window { bottom: 10px; right: 25%; }
 #additional-window {top: 10%; right: 5%;}
-#guess-window{top: 15%; left: 25%}
+#guess-window{top: 5%; left:15%;}
+#website-window{top: 5%;}
+#consulting-window{top: 5%; right:15%;}
 
 /* Draggable Windows */
 .draggable {
@@ -372,6 +374,12 @@ body {
     position: absolute;
     top: 2%;
     right: 5%;
+}
+
+.group-bottom-right {
+    position: absolute;
+    bottom: 30%;
+    right: 25%;
 }
 
 
@@ -496,4 +504,76 @@ body {
 
 .clock {
     color: white;
+}
+
+
+
+
+.screenshots {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.screenshot {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.inline-image {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 5px; /* Adds spacing between the image and text */
+    vertical-align: middle; /* Aligns the image with the middle of the text */
+}
+
+
+/* Change font size of the window title only */
+.window-title-text {
+    font-size: 12px; /* Adjust as needed */
+}
+
+/* Ensure the window buttons stay at their default font size */
+.window-buttons span {
+    font-size: 16px; /* Adjust this for your buttons */
+}
+
+
+/* Styling for the container that holds the images */
+.screenshots {
+    display: flex;
+    flex-wrap: wrap; /* Allows the images to wrap if needed */
+    gap: 10px; /* Adds spacing between images */
+    justify-content: center; /* Centers the images horizontally */
+}
+
+/* Styling for the individual images */
+.screenshot {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styling for the horizontal screenshot (screenshot 4) */
+.horizontalscreenshot {
+    display: flex;
+    justify-content: center; /* Centers the image */
+    width: 100%; /* Ensures it takes full width of the container */
+    margin-top: 20px; /* Adds some space between the portrait images and the horizontal one */
+}
+
+.horizontalscreenshot img {
+    max-width: 100%; /* Ensures the image takes up full width but doesn't overflow */
+    width: 80%; /* Adjusts the width to fit the container */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image */
 }

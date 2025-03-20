@@ -42,6 +42,18 @@ function handleCommand(event) {
                 case "console":
                     outputDiv.innerHTML += `<p>Can't launch this application via the console!</p>`;
                     break;
+                case "guess & go":
+                    outputDiv.innerHTML += `<p>Launching Guess & Go.exe</p>`;
+                    openWindow("guess-window")
+                    break;
+                case "website":
+                    outputDiv.innerHTML += `<p>Launching website.exe</p>`;
+                    openWindow("website-window")
+                    break;
+                case "consulting competition":
+                    outputDiv.innerHTML += `<p>Consulting Competition.exe</p>`;
+                    openWindow("consulting-window")
+                    break;
                 default:
                     outputDiv.innerHTML += `<p>Unknown executable: ${command}</p>`;
             }
@@ -49,7 +61,7 @@ function handleCommand(event) {
             // Handle commands that do not end with ".exe"
             switch (command) {
                 case "help":
-                    outputDiv.innerHTML += `<p>Available commands: help, about, clear, time, whoami, .exe commands</p>`;
+                    outputDiv.innerHTML += `<p>Available commands: help, about, clear, time, whoami, .exe commands, ls</p>`;
                     break;
                 case "about":
                     outputDiv.innerHTML += `<p>Console.exe - A retro command-line interface.</p>`;
@@ -61,7 +73,10 @@ function handleCommand(event) {
                     outputDiv.innerHTML += `<p>${new Date().toLocaleTimeString()}</p>`;
                     break;
                 case "whoami":
-                    outputDiv.innerHTML += `<p>User: Ivo | OS: Win95 | Role: Developer</p>`;
+                    outputDiv.innerHTML += `<p>User: Ivo | OS: ivOS | Role: Developer</p>`;
+                    break;
+                case "ls":
+                    outputDiv.innerHTML += `<p>Console.exe<br>Consulting Competition.exe<br>Contact.exe<br>Education.exe<br>Guess & Go.exe<br>Leadership Roles.exe<br>Quick Actions.exe<br>Skills.exe<br>Website.exe<br>Work Experience.exe</p>`;
                     break;
                 default:
                     outputDiv.innerHTML += `<p>Unknown command: ${command}</p>`;

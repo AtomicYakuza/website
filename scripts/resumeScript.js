@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const windows = ["work-window", "education-window", "skills-window", "contact-window", "additional-window", "guess-window", "console-window"];
+    const windows = ["work-window", "education-window", "skills-window", "contact-window", "additional-window", "guess-window", "console-window", "website-window", "consulting-window"];
 
     // Hide all windows except "Quick Actions"
     windows.forEach(windowId => {
@@ -77,7 +77,7 @@ function openAllContactWindows() {
 }
 
 function openAllProjectWindows() {
-    openWindow("guess-window");
+    ["guess-window", "website-window", "consulting-window"].forEach(openWindow);
 }
 
 

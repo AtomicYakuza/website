@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icons/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Ivo Marienfeld</title>
+    <title>ivOS</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/consoleStyles.css">
-    <link rel="icon" type="image/png" href="icons/favicon.png">
+    <link rel="stylesheet" href="styles/consoleStyles.css"> 
+    <!-- <link rel="icon" type="image/png" href="/icons/favicon.png"> -->
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="IvOS"/>
     <meta property="og:description" content="Personal Website." />
@@ -27,7 +29,7 @@
         <div class="desktop-icons">
             <div class="icon-group group-top-left">
                 <div class="desktop-icon" onclick="openWindow('work-window')">
-                    <img src="icons/computer.png" alt="Work">
+                    <img src="icons/work.png" alt="Work">
                     <p>Work Experience.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('education-window')">
@@ -56,7 +58,21 @@
                 </div>
                 <div class="desktop-icon" onclick="openWindow('console-window')">
                     <img src="icons/terminal.png" alt="term">
-                    <p>Terminal.exe</p>
+                    <p>Console.exe</p>
+                </div>
+            </div>
+            <div class="icon-group group-bottom-right">
+                <div class="desktop-icon" onclick="openWindow('guess-window')">
+                    <img src="icons/game.png" alt="QA">
+                    <p>Guess & Go.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('website-window')">
+                    <img src="icons/website.png" alt="term">
+                    <p>Website.exe</p>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('consulting-window')">
+                    <img src="icons/competition.png" alt="term">
+                    <p>Consulting Competition.exe</p>
                 </div>
             </div>
         </div>
@@ -64,7 +80,7 @@
         <!-- Quick Actions -->
         <div class="window draggable" id="quick-window">
             <div class="window-title">
-                <span>Quick Actions.exe</span>
+                <span class="window-title-text"><img src="icons/quick.png" alt="Game image" class="inline-image">Quick Actions.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('quick-window')">✖</span>
                 </div>
@@ -81,7 +97,7 @@
         <!-- Work Experience Window -->
         <div class="window draggable hidden" id="work-window">
             <div class="window-title">
-                <span>Work Experience.exe</span>
+                <span class="window-title-text"><img src="icons/work.png" alt="Game image" class="inline-image">Work Experience.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('work-window')">✖</span>
                 </div>
@@ -120,7 +136,7 @@
         <!-- Education Window -->
         <div class="window draggable hidden" id="education-window">
             <div class="window-title">
-                <span>Education.exe</span>
+                <span class="window-title-text"><img src="icons/education.png" alt="Game image" class="inline-image">Education.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('education-window')">✖</span>
                 </div>
@@ -146,7 +162,7 @@
         <!-- Education Window -->
         <div class="window draggable hidden" id="additional-window">
             <div class="window-title">
-                <span>Leadership Roles.exe</span>
+                <span class="window-title-text"><img src="icons/additional.png" alt="Game image" class="inline-image">Leadership Roles.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('additional-window')">✖</span>
                 </div>
@@ -182,7 +198,7 @@
         <!-- Skills Window -->
         <div class="window draggable hidden" id="skills-window">
             <div class="window-title">
-                <span>Skills.exe</span>
+                <span class="window-title-text"><img src="icons/skills.png" alt="Game image" class="inline-image">Skills.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('skills-window')">✖</span>
                 </div>
@@ -210,29 +226,29 @@
         <!-- Contact Window -->
         <div class="window draggable hidden" id="contact-window">
             <div class="window-title">
-                <span>Contact.exe</span>
+                <span class="window-title-text"><img src="icons/contact.png" alt="Game image" class="inline-image">Contact.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('contact-window')">✖</span>
                 </div>
             </div>
             <div class="window-content">
                 <p><strong>Email:</strong> <a href="mailto:contact@ivodev.co.uk">contact@ivodev.co.uk</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ivomarienfeld">linkedin.com/in/ivomarienfeld</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/atomicyakuza">github.com/atomicyakuza</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ivomarienfeld" target="_blank">linkedin.com/in/ivomarienfeld</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/atomicyakuza" target="_blank">github.com/atomicyakuza</a></p>
             </div>
         </div>
         <!-- Guess & Go Windpw -->
         <div class="window draggable hidden" id="guess-window">
             <div class="window-title">
-                <span>Guess&Go.exe</span>
+                <span class="window-title-text"><img src="icons/game.png" alt="Game image" class="inline-image">Guess & Go.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('guess-window')">✖</span>
                 </div>
             </div>
             <div class="window-content">
-                <h3>🎮 Guess & Go</h3>
-                <p><strong>Description:</strong> A fun multiplayer party game app that lets users play together guessing</p>
-                
+                <h3>Guess & Go</h3>
+                <p><strong>Description:</strong> <br>Guess & Go is a fast-paced, multiplayer party game designed to bring friends and family together! The game allows players to compete in guessing challenges, where they have to quickly identify and react to various prompts in real-time. The game is ideal for game nights, gatherings, or casual hangouts with friends.</p>
+                <p><strong>What I Did:</strong> <br>I developed and launched Guess & Go, a multiplayer trivia app, using SwiftUI and Google AdMob for monetization. I also marketed the app through social media and gameplay teasers to reach a wider audience.</p>
                 <p><strong>Technologies Used:</strong></p>
                 <ul>
                     <li>SwiftUI</li>
@@ -247,16 +263,92 @@
                     <li>Leaderboard tracking</li>
                 </ul>
         
-                <p><strong>🔗 Links:</strong></p>
-                <a href="https://github.com/yourusername/project-repo" target="_blank">🔗 GitHub Repo</a>
-                <br>
-                <a href="https://yourprojectdemo.com" target="_blank">🚀 App Store</a>
+                <p><strong>Game Screenshots:</strong></p>
+                <div class="screenshots">
+                    <img src="images/screenshot1.png" alt="Screenshot 1" class="screenshot" />
+                    <img src="images/screenshot2.png" alt="Screenshot 2" class="screenshot" />
+                    <img src="images/screenshot3.png" alt="Screenshot 3" class="screenshot" />
+                </div>
+                
+                <div class="horizontalscreenshot">
+                    <img src="images/screenshot4.png" alt="Screenshot 4" class="screenshot" />
+                </div>
+        
+                <!-- <p><strong>Gameplay Video:</strong></p>
+                <div class="video-container">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> -->
+        
+                <p><strong>🔗 Link:</strong></p>
+                <a href="https://apps.apple.com/gb/app/guess-go/id6742334462" target="_blank">🚀 App Store</a>
+        
+                <!-- <p><strong>User Reviews:</strong></p>
+                <div class="user-reviews">
+                    <p><strong>John Doe:</strong> "Such a fun and addictive game! The multiplayer feature is awesome!"</p>
+                    <p><strong>Jane Smith:</strong> "Perfect for game nights with friends. Highly recommend!"</p>
+                </div> -->
             </div>
         </div>
+        <!-- website -->
+        <div class="window draggable hidden" id="website-window">
+            <div class="window-title">
+                <span class="window-title-text"><img src="icons/website.png" alt="Game image" class="inline-image">Website.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('website-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <h3>Website</h3>
+                <p><strong>Description:</strong> <br>This website!</p>
+                <p><strong>What I Did:</strong><br> Designed and developed my personal website to showcase my professional experience, skills, and projects in a unique and interactive way. </p>
+                <p><strong>Technologies Used:</strong></p>
+                <ul>
+                    <li>HTML, CSS, JS</li>
+                    <li>Cloudflare</li>
+                    <li>GitHub</li>
+                    <li>Zoho Mail</li>
+                </ul>
+        
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Interactive Windows and Draggable Elements</li>
+                    <li>Functioning Console</li>
+                    <li>Retro UI inspired by Windows 95</li>
+                </ul>
+                <p><strong>🔗 Link:</strong></p>
+                <a href="https://github.com/AtomicYakuza/website" target="_blank">GitHub Repo</a>
+            </div>
+        </div>
+            <!-- Consulting Competition-->
+        <div class="window draggable hidden" id="consulting-window">
+            <div class="window-title">
+                <span class="window-title-text"><img src="icons/competition.png" alt="Game image" class="inline-image">Consulting Competition.exe</span>
+                <div class="window-buttons">
+                    <span>❐</span> <span>❏</span> <span onclick="closeWindow('consulting-window')">✖</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <h3>Consulting Competition</h3>
+                <p><strong>Description:</strong> <br>As part of a Consulting Competition organized by Warwick Consulting Society and judged by ex alumni from Deloitte, EY & Accenture. I worked with a team to develop a strategy for a local government to effectively encourage residents to switch to green alternatives and reduce greenhouse gas emissions.</p>
+                <p><strong>Achieved:</strong> 3rd place</p>
+                <p><strong>What I Did:</strong><br>In this competition, I contributed to the research, strategy formulation, and presentation of our solution. My key tasks included:<br>
+                    •	Conducting research on current green initiatives and their effectiveness within local communities.<br>
+                    •	Developing recommendations to promote the adoption of sustainable practices among residents (such as renewable energy adoption, waste reduction, and eco-friendly transportation options).<br>
+                    •	Presenting our findings and strategies to a panel of judges, which included experts in sustainability, local governance, and environmental policy.</p>
+                <p><strong>Impact:</strong><br> Our recommendations were recognized for their potential to reduce the local government's carbon footprint by 20% over the next five years, according to the analysis we presented.</p>
+                <p><strong>Skills Developed:</strong><br>
+                • Strengthened my ability to work effectively within a team under tight deadlines.<br>
+                • Enhanced my skills in <strong>analysis</strong>, <strong>research</strong>, and <strong>problem-solving</strong>.<br>
+                • Improved my ability to deliver presentations to high-level industry experts and executives.</p>
+            
+                </div>
+            </div>
+        </div>
+        
         <!-- Console Window -->
         <div class="window draggable" id="console-window">
             <div class="window-title">
-                <span>Console.exe</span>
+                <span class="window-title-text"><img src="icons/terminal.png" alt="Game image" class="inline-image">Console.exe</span>
                 <div class="window-buttons">
                     <span>❐</span> <span>❏</span> <span onclick="closeWindow('console-window')">✖</span>
                 </div>
@@ -267,7 +359,7 @@
                     <p>Type 'help' to see available commands.</p>
                 </div>
                 <div class="console-input">
-                    <span>C:\User\Ivo&gt;</span>
+                    <span>C:\User\Ivo\desktop&gt;</span>
                     <input type="text" id="console-input" autofocus onkeydown="handleCommand(event)">
                 </div>
             </div>
