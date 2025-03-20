@@ -51,8 +51,12 @@ function handleCommand(event) {
                     openWindow("website-window")
                     break;
                 case "consulting competition":
-                    outputDiv.innerHTML += `<p>Consulting Competition.exe</p>`;
+                    outputDiv.innerHTML += `<p>Launching Consulting Competition.exe</p>`;
                     openWindow("consulting-window")
+                    break;
+                case "quick actions":
+                    outputDiv.innerHTML += `<p>Launching Quick Actions.exe</p>`;
+                    openWindow("quick-window")
                     break;
                 default:
                     outputDiv.innerHTML += `<p>Unknown executable: ${command}</p>`;
@@ -76,7 +80,7 @@ function handleCommand(event) {
                     outputDiv.innerHTML += `<p>User: Ivo | OS: ivOS | Role: Developer</p>`;
                     break;
                 case "ls":
-                    outputDiv.innerHTML += `<p>Console.exe<br>Consulting Competition.exe<br>Contact.exe<br>Education.exe<br>Guess & Go.exe<br>Leadership Roles.exe<br>Quick Actions.exe<br>Skills.exe<br>Website.exe<br>Work Experience.exe</p>`;
+                    outputDiv.innerHTML += `<p>Console.exe<br>Consulting Competition.exe<br>Contact.exe<br>Education.exe<br>Guess & Go.exe<br>Leadership Roles.exe<br>Quick Actions.exe<br>Skills.exe<br>Website.exe<br>Work Experience.exe<br><s>Hidden.exe</s></p>`;
                     break;
                 default:
                     outputDiv.innerHTML += `<p>Unknown command: ${command}</p>`;
