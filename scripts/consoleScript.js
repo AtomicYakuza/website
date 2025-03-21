@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("console-input").focus();
 });
 
+var enableGlitch = true
+
 function handleCommand(event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -58,6 +60,10 @@ function handleCommand(event) {
                     outputDiv.innerHTML += `<p>Launching Quick Actions.exe</p>`;
                     openWindow("quick-window")
                     break;
+                case "hidden":
+                    toggleGlitchEffect(enableGlitch)
+                    enableGlitch = !enableGlitch
+                    break;
                 default:
                     outputDiv.innerHTML += `<p>Unknown executable: ${command}</p>`;
             }
@@ -95,6 +101,30 @@ function handleCommand(event) {
     }
 }
 
+
+function toggleGlitchEffect(enable) {
+    // Select both text and images inside each .desktop-icon
+    const glitchTextElements = document.querySelectorAll('.desktop-icon p'); // Text
+    const glitchImageElements = document.querySelectorAll('.desktop-icon img'); // Images
+
+    // Add or remove glitch effect for text
+    glitchTextElements.forEach(element => {
+        if (enable) {
+            element.classList.add('glitch-effect');  // Add glitch effect to text
+        } else {
+            element.classList.remove('glitch-effect');  // Remove glitch effect from text
+        }
+    });
+
+    // Add or remove glitch effect for images
+    // glitchImageElements.forEach(element => {
+    //     if (enable) {
+    //         element.classList.add('glitch-effect');  // Add glitch effect to images
+    //     } else {
+    //         element.classList.remove('glitch-effect');  // Remove glitch effect from images
+    //     }
+    // });
+}
 
 
 function openWindow(windowId) {

@@ -9,6 +9,7 @@
     <title>ivOS</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/consoleStyles.css"> 
+    <link rel="stylesheet" href="styles/glitchStyles.css"> 
     <!-- <link rel="icon" type="image/png" href="/icons/favicon.png"> -->
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="IvOS"/>
@@ -24,55 +25,55 @@
     
 </head>
 <body>
-    <div id="main-content"></div>
+    <div id="main-content">
         <!-- Desktop Shortcuts -->
         <div class="desktop-icons">
             <div class="icon-group group-top-left">
                 <div class="desktop-icon" onclick="openWindow('work-window')">
-                    <img src="icons/work.png" alt="Work">
-                    <p>Work Experience.exe</p>
+                    <img src="icons/work.png" alt="Work" class="start-image">
+                    <p data-text="Work Experience.exe">Work Experience.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('education-window')">
-                    <img src="icons/education.png" alt="Edu">
-                    <p>Education.exe</p>
+                    <img src="icons/education.png" alt="Edu" class="start-image">
+                    <p data-text="Education.exe">Education.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('skills-window')">
-                    <img src="icons/skills.png" alt="Skills">
-                    <p>Skills.exe</p>
+                    <img src="icons/skills.png" alt="Skills" class="start-image">
+                    <p data-text="Skills.exe">Skills.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('additional-window')">
-                    <img src="icons/additional.png" alt="Contact">
-                    <p>Leadership Roles.exe</p>
+                    <img src="icons/additional.png" alt="Contact" class="start-image">
+                    <p data-text="Leadership Roles.exe">Leadership Roles.exe</p>
                 </div>
             </div>
             <div class="icon-group group-bottom-left">
                 <div class="desktop-icon" onclick="openWindow('contact-window')">
-                    <img src="icons/contact.png" alt="cont">
-                    <p>Contact.exe</p>
+                    <img src="icons/contact.png" alt="cont" class="start-image">
+                    <p  data-text="Contact.exe">Contact.exe</p>
                 </div>
             </div>
             <div class="icon-group group-top-right">
                 <div class="desktop-icon" onclick="openWindow('quick-window')">
-                    <img src="icons/quick.png" alt="QA">
-                    <p>Quick Actions.exe</p>
+                    <img src="icons/quick.png" alt="QA" class="start-image">
+                    <p data-text="Quick Actions.exe">Quick Actions.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('console-window')">
-                    <img src="icons/terminal.png" alt="term">
-                    <p>Console.exe</p>
+                    <img src="icons/terminal.png" alt="term" class="start-image">
+                    <p data-text="Console.exe">Console.exe</p>
                 </div>
             </div>
             <div class="icon-group group-bottom-right">
                 <div class="desktop-icon" onclick="openWindow('guess-window')">
-                    <img src="icons/game.png" alt="QA">
-                    <p>Guess & Go.exe</p>
+                    <img src="icons/game.png" alt="QA" class="start-image">
+                    <p  data-text="Guess & Go.exe">Guess & Go.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('website-window')">
-                    <img src="icons/website.png" alt="term">
-                    <p>Website.exe</p>
+                    <img src="icons/website.png" alt="term" class="start-image">
+                    <p data-text="Website.exe">Website.exe</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('consulting-window')">
-                    <img src="icons/competition.png" alt="term">
-                    <p>Consulting Competition.exe</p>
+                    <img src="icons/competition.png" alt="term" class="start-image">
+                    <p data-text="Consulting Competition.exe">Consulting Competition.exe</p>
                 </div>
             </div>
         </div>
@@ -364,15 +365,16 @@
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
     <div class="taskbar">
-        <div class="start-button" id="start-button" onclick="toggleStartMenu()">Start</div>
+        <div class="start-button" id="start-button" onclick="toggleStartMenu()"><img src="icons/computer.png" alt="Logo image" class="inline-image">Start</div>
         <div class="clock"></div>
     </div>
     <div id="start-menu" class="start-menu">
         <ul>
-            <li>📁 My Computer</li>
+            <li><img src="icons/folder.png" alt="Folder" class="start-image"> Documents</li>
             <li>📄 Documents</li>
             <li>🔧 Settings</li>
             <li>🔄 Restart</li>

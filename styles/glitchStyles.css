@@ -1,0 +1,81 @@
+/* Glitch Effect for Text */
+.glitch-effect {
+    position: relative;
+    display: inline-block;
+    font-size: 40px; /* Adjust the font size as needed */
+    color: #00FF00; /* Initial color for the text */
+    font-family: 'VT323', monospace; /* Retro font for the glitch effect */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    animation: glitch 1s infinite;
+}
+
+.glitch-effect::before {
+    left: 2px;
+    text-shadow: -2px 0px 0px #FF00FF, 2px 2px 5px rgba(0, 255, 255, 0.7); /* Pink and blue shadows */
+    animation: glitchBefore 1s infinite linear;
+}
+
+.glitch-effect::after {
+    left: -2px;
+    text-shadow: 2px 0px 0px #FFFF00, -2px -2px 5px rgba(255, 255, 255, 0.5); /* Yellow and white shadows */
+    animation: glitchAfter 1s infinite linear;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        color: #00FF00; /* Green */
+    }
+    20% {
+        transform: translate(-5px, -5px);
+        color: #FF00FF; /* Pink */
+    }
+    40% {
+        transform: translate(5px, 5px);
+        color: #FFFF00; /* Yellow */
+    }
+    60% {
+        transform: translate(-5px, -5px);
+        color: #00FFFF; /* Cyan */
+    }
+    80% {
+        transform: translate(5px, 5px);
+        color: #FF00FF; /* Pink */
+    }
+    100% {
+        transform: translate(0);
+        color: #00FF00; /* Back to Green */
+    }
+}
+
+/* Before Glitch Animation */
+@keyframes glitchBefore {
+    0% { transform: translate(0); }
+    20% { transform: translate(-5px, 0); }
+    40% { transform: translate(5px, 0); }
+    60% { transform: translate(-5px, 0); }
+    80% { transform: translate(5px, 0); }
+    100% { transform: translate(0); }
+}
+
+/* After Glitch Animation */
+@keyframes glitchAfter {
+    0% { transform: translate(0); }
+    20% { transform: translate(5px, 0); }
+    40% { transform: translate(-5px, 0); }
+    60% { transform: translate(5px, 0); }
+    80% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
