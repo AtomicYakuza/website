@@ -581,3 +581,10 @@ body {
 span {
     white-space: nowrap;
 }
+
+.start-image {
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+    /* padding-right: 5px; Adds spacing between image and text */
+}
